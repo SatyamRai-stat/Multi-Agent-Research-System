@@ -4,7 +4,13 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain.agents import create_agent
 from tools import web_serach , scrape_url
 from dotenv import load_dotenv
-load_dotenv()
+import os
+import streamlit as st
+try:
+    os.environ["MISTRAL_API_KEY"] = st.secrets["MISTRAL_API_KEY"]
+except:
+    load_dotenv()
+
 
 llm=init_chat_model(
     model="mistral-small-latest",
