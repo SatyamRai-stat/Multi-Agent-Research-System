@@ -6,7 +6,6 @@ import os
 from dotenv import load_dotenv
 from rich import print
 import streamlit as st
-
 try:
     TAVILY_API_KEY = st.secrets["TAVILY_API_KEY"]
 except:
